@@ -1,4 +1,5 @@
 ﻿using Docker.Example.App.Models;
+using Docker.Example.App.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Docker.Example.App.Controllers
@@ -17,9 +18,13 @@ namespace Docker.Example.App.Controllers
         {
             if (ModelState.IsValid)
             {
+                new CadastroService().Salvar(model);
+            }
+            else
+            {
+                model.MensagemDeRetorno = "O model não é válido!";
             }
 
-            model.MensagemDeRetorno = "PARABENS";
             return View("Index", model);
         }
     }
