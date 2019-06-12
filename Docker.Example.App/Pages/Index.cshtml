@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>Insira seus dados abaixo para testar e confira se salvou no banco de dados!</h3>
+
+@using (Html.BeginForm("Subscribe", "Index", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.Nome)
+    @Html.TextBoxFor(model => model.Telefone)
+    <button type="submit">Subscribe</button>
+}
