@@ -1,0 +1,15 @@
+﻿@model Docker.Example.App.Models.Cadastro
+@{
+    ViewData["Title"] = "Home page";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>Insira seus dados abaixo para testar e confira se salvou no banco de dados!</h3>
+
+@using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", placeholder = "Nome", style = "width: 30%; margin-bottom: 10px; margin-top: 30px" })
+    @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control", placeholder = "Telefone", style = "width: 30%; margin-bottom: 10px" })
+    <button type="submit">Testar!</button>
+    <br />
+    <label style="margin-top: 30px">@Model.MensagemDeRetorno</label>
+}
