@@ -2,8 +2,8 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>Insira seus dados abaixo para testar e confira se salvou no banco de dados!</h3>
+<h2 style="font-family: Comic Sans MS">@ViewData["Title"]</h2>
+<h3 style="font-family: Comic Sans MS; font-style: italic">Insira seus dados abaixo para testar e confira se salvou no banco de dados!</h3>
 
 @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
 {

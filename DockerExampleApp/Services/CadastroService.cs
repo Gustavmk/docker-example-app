@@ -6,6 +6,7 @@ namespace DockerExampleApp.Services
 {
     public class CadastroService
     {
+        // Lembrando que o intuito da aplicação é somente uma página web para salvar em um banco hospedado em um contâiner Docker ;)
         public void Salvar(Cadastro model)
         {
             try
@@ -17,7 +18,7 @@ namespace DockerExampleApp.Services
                     conn.Open();
                     var cmd = new SqlCommand($"INSERT INTO cadastro VALUES ('{model.Nome}', '{model.Telefone}')", conn);
                     cmd.ExecuteNonQuery();
-                    model.MensagemDeRetorno = "PARABENS!";
+                    model.MensagemDeRetorno = "PARABÉNS!";
                 }
             }
             catch (Exception ex)
